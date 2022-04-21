@@ -1,0 +1,24 @@
+{
+  "name": "sdc-project-atelier",
+  "version": "1.0.0",
+  "description": "The backend for our frontend project, Project Atelier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Princess-Peach-Team/RatingsAndReviews.git"
+  },
+  "author": "Mitchell Wintrow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Princess-Peach-Team/RatingsAndReviews/issues"
+  },
+  "homepage": "https://github.com/Princess-Peach-Team/RatingsAndReviews#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "path": "^0.12.7",
+    "pg": "^8.7.3"
+  }
+}
