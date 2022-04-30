@@ -1,8 +1,8 @@
 const { Pool } = require('pg')
 const pool = new Pool({
   user: 'mitchwintrow',
-  password: '',
-  host: 'localhost',
+  password: 'newPassword',
+  host: '3.144.74.26',
   port: 5432,
   database: 'ratingsandreviews'
 });
@@ -168,34 +168,3 @@ module.exports.getMeta = GETMeta;
 module.exports.putHelpful = PUTHelpful;
 module.exports.putReport = PUTReport;
 module.exports.postReviews = POSTReviews;
-
-
-// SELECT
-//     review.product_id AS product_id,
-//     json_build_object(
-//       '1', (SELECT COUNT(rating) FROM review WHERE product_id = 1
-//       AND rating = 1),
-//       '2', (SELECT COUNT(rating) FROM review WHERE product_id = 1
-//       AND rating = 2),
-//       '3', (SELECT COUNT(rating) FROM review WHERE product_id = 1
-//       AND rating = 3),
-//       '4', (SELECT COUNT(rating) FROM review WHERE product_id = 1
-//       AND rating = 4),
-//       '5', (SELECT COUNT(rating) FROM review WHERE product_id = 1
-//       AND rating = 5)
-//     ) AS rating,
-//     json_build_object(
-//       '0', (SELECT COUNT(recommend) FROM review WHERE recommend = 'false' AND product_id = 1),
-//       '1', (SELECT COUNT(recommend) FROM review WHERE recommend = 'true' AND product_id = 1)
-//     ) AS recommend,
-//     json_object_agg(
-//       characteristics.name, json_build_object(
-//         'id', characteristics.id,
-//         'value', (SELECT avg(meta.value) FROM meta WHERE meta.characteristic_id = characteristics.id)
-//       )
-//     ) AS characteristics
-//     FROM review
-//     LEFT JOIN characteristics ON characteristics.product_id = review.product_id
-//     LEFT JOIN meta ON meta.characteristic_id = characteristics.id
-//     WHERE review.product_id = 1
-//     GROUP BY review.product_id

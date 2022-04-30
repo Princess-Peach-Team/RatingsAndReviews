@@ -2,4 +2,11 @@ CSVs/*.csv
 node_modules
 package-lock.json
 sdc_database.pem
-server/k6.js
+sdc_server1.pem
+sdc_server2.pem
+sdc_server3.pem
+sdc_server4.pem
+sdc_server5.pem
+db.sql.gz
+sdc_nginx.pem
+characteristics.csv.gz
